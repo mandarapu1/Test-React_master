@@ -38,17 +38,17 @@ class App extends Component {
       this.setState({counters});    
   }
   render() {
+    console.log("props", this.props);
     return (
       <React.Fragment>
-      <NavBar
-        totalCounters={ this.state.counters.length }
-      />
+      <NavBar totalCounters={this.state.counters.length} />
       <main className="container">
-        <Counters />
+        <Counters 
           counters={this.state.counters}
           onReset={this.handleReset}
           onIncrement={this.handleIncrement}
           onDelete={this.handleDelete}
+        />
       </main>
       </React.Fragment>
     );
